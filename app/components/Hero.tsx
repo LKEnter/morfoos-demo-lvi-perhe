@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="relative aspect-[13/11] w-full overflow-hidden rounded-[28px] md:aspect-[21/9]">
           <Image
             src="/assets/images/hero.jpg"
-            alt="Perheputki Etelä Oy:n ammattilainen LVI-työssä"
+            alt="LVI-putkisto ja painemittari teknisen työn kohteessa"
             fill
             priority
             fetchPriority="high"
