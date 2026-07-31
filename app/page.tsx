@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { generateMorfoosSEO } from "@morfoos/core/seo";
 import { LocalBusinessSchema } from "@morfoos/core/components/schemas";
 import Hero from "./components/Hero";
@@ -7,10 +8,18 @@ import Services from "./components/Services";
 import Turnkey from "./components/Turnkey";
 import FamilyStory from "./components/FamilyStory";
 import Store from "./components/Store";
-import BrandsCarousel from "./components/BrandsCarousel";
-import Reviews from "./components/Reviews";
 import CtaBand from "./components/CtaBand";
 import Contact from "./components/Contact";
+
+/** Below-fold interactive sections — keep out of the initial JS/CSS critical path. */
+const BrandsCarousel = dynamic(() => import("./components/BrandsCarousel"), {
+  loading: () => <div className="border-t border-[var(--color-border)] bg-white py-20 md:py-24" aria-hidden />,
+});
+const Reviews = dynamic(() => import("./components/Reviews"), {
+  loading: () => (
+    <div className="border-t border-[var(--color-border)] bg-[var(--color-bg-light)] py-20 md:py-28" aria-hidden />
+  ),
+});
 
 export const generateMetadata = () =>
   generateMorfoosSEO({

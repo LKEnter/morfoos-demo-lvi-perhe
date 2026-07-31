@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
 /* Admin CSS is loaded only from app/admin/layout.tsx to keep the marketing CSS lean. */
-/* Scan Morfoos core utilities used by MorfoosGlobalProvider on the public site */
-@source "../node_modules/@morfoos/core/dist/**/*.{js,cjs}";
 
 @theme {
   --color-accent: #0f766e;
