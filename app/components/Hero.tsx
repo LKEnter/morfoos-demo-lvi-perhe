@@ -64,6 +64,8 @@ export default function Hero() {
             alt="Perheputki Etelä Oy:n ammattilainen LVI-työssä"
             fill
             priority
+            fetchPriority="high"
+            quality={75}
             sizes="90vw"
             className="object-cover"
           />

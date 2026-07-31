@@ -1,8 +1,7 @@
 @import "tailwindcss";
-@import "@morfoos/morfoos-os/styles/admin.css";
 
-/* Scan Morfoos packages so admin/core utility classes are generated */
-@source "../node_modules/@morfoos/morfoos-os/dist/**/*.{js,cjs}";
+/* Admin CSS is loaded only from app/admin/layout.tsx to keep the marketing CSS lean. */
+/* Scan Morfoos core utilities used by MorfoosGlobalProvider on the public site */
 @source "../node_modules/@morfoos/core/dist/**/*.{js,cjs}";
 
 @theme {

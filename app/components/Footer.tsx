@@ -25,20 +25,20 @@ export default function Footer() {
                 className="h-[24px] w-auto"
               />
             </div>
-            <p className="mt-4 max-w-[30ch] text-[14px] leading-relaxed text-white/60">
+            <p className="mt-4 max-w-[30ch] text-[14px] leading-relaxed text-white/75">
               Perheyritys, joka on hoitanut alueen kotien LVI-, maanrakennus- ja
               huoltotyöt vuosien kokemuksella.
             </p>
           </div>
 
           <div>
-            <h3 className="text-[13px] font-semibold uppercase tracking-[0.04em] text-white/50">
+            <h3 className="text-[13px] font-semibold uppercase tracking-[0.04em] text-white/70">
               Valikko
             </h3>
             <ul className="mt-4 flex flex-col gap-2.5">
               {LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-[15px] text-white/75 hover:text-white">
+                  <a href={link.href} className="text-[15px] text-white/85 hover:text-white">
                     {link.label}
                   </a>
                 </li>
@@ -47,10 +47,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[13px] font-semibold uppercase tracking-[0.04em] text-white/50">
+            <h3 className="text-[13px] font-semibold uppercase tracking-[0.04em] text-white/70">
               Yhteystiedot
             </h3>
-            <ul className="mt-4 flex flex-col gap-2.5 text-[15px] text-white/75">
+            <ul className="mt-4 flex flex-col gap-2.5 text-[15px] text-white/85">
               <li>
                 <a href={CONTACT.phoneHref} className="hover:text-white">
                   {CONTACT.phoneLabel}
@@ -61,7 +61,7 @@ export default function Footer() {
                   {CONTACT.emailLabel}
                 </a>
               </li>
-              <li className="pt-1 text-white/60">
+              <li className="pt-1 text-white/75">
                 {CONTACT.addressLine1}
                 <br />
                 {CONTACT.addressLine2}
@@ -70,10 +70,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[13px] font-semibold uppercase tracking-[0.04em] text-white/50">
+            <h3 className="text-[13px] font-semibold uppercase tracking-[0.04em] text-white/70">
               Toiminta-alue
             </h3>
-            <ul className="mt-4 flex flex-col gap-2.5 text-[15px] text-white/75">
+            <ul className="mt-4 flex flex-col gap-2.5 text-[15px] text-white/85">
               {SERVICE_AREA.map((town) => (
                 <li key={town}>{town}</li>
               ))}
@@ -81,7 +81,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 text-[13px] text-white/45">
+        <div className="pt-8 text-[13px] text-white/70">
           <p>© {new Date().getFullYear()} Perheputki Etelä Oy. Kaikki oikeudet pidätetään.</p>
         </div>
       </div>

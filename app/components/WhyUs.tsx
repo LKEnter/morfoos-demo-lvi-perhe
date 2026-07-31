@@ -48,9 +48,9 @@ export default function WhyUs() {
                   {reason.icon}
                 </svg>
               </span>
-              <h3 className="font-heading text-lg font-bold tracking-[-0.01em] text-[var(--color-ink)]">
+              <p className="font-heading text-lg font-bold tracking-[-0.01em] text-[var(--color-ink)]">
                 {reason.title}
-              </h3>
+              </p>
               <p className="text-[15px] leading-relaxed text-[var(--color-ink-muted)]">{reason.text}</p>
             </div>
           ))}

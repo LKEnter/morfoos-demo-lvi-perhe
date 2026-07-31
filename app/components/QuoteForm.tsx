@@ -121,13 +121,13 @@ const SERVICE_OPTIONS: { id: ServiceId; label: string; icon: React.ReactNode }[]
 ];
 
 const inputClass =
-  "w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-[15px] text-white placeholder:text-white/50 transition-colors duration-150 focus-visible:border-white focus-visible:bg-white/15 focus-visible:outline-white focus-visible:outline-offset-2";
+  "w-full rounded-xl border border-white/40 bg-black/15 px-4 py-3 text-[15px] text-white placeholder:text-white/75 transition-colors duration-150 focus-visible:border-white focus-visible:bg-black/20 focus-visible:outline-white focus-visible:outline-offset-2";
 
 const optionButtonClass = (selected: boolean) =>
   `flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl px-3 text-center transition-colors duration-150 ease-out focus-visible:outline-white focus-visible:outline-offset-2 ${
     selected
       ? "bg-white text-[var(--color-accent)]"
-      : "border border-white/25 bg-white/10 text-white hover:bg-white/15"
+      : "border border-white/40 bg-transparent text-white hover:bg-black/10"
   }`;
 
 function StepIndicator({ currentStep }: { currentStep: number }) {
@@ -144,7 +144,7 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
                   className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[13px] font-bold transition-colors duration-200 ${
                     isDone || isCurrent
                       ? "bg-white text-[var(--color-accent)]"
-                      : "border border-white/35 text-white/60"
+                      : "border border-white/50 text-white/90"
                   }`}
                 >
                   {isDone ? (
@@ -157,7 +157,7 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
                 </span>
                 <p
                   className={`mt-2.5 text-[13px] font-semibold ${
-                    isDone || isCurrent ? "text-white" : "text-white/60"
+                    isDone || isCurrent ? "text-white" : "text-white/90"
                   }`}
                 >
                   {step.label}
@@ -225,7 +225,7 @@ export default function QuoteForm() {
           </svg>
         </span>
         <h3 className="font-heading text-xl font-bold text-white">Kiitos pyynnöstäsi!</h3>
-        <p className="max-w-[36ch] text-[15px] leading-relaxed text-white/85">
+        <p className="max-w-[36ch] text-[15px] leading-relaxed text-white">
           Sähköpostisovelluksesi avautui viestiluonnoksella. Jos se ei avautunut, soita meille
           suoraan numeroon{" "}
           <a href={CONTACT.phoneHref} className="font-semibold text-white underline underline-offset-2">
@@ -240,7 +240,7 @@ export default function QuoteForm() {
   return (
     <div className="flex h-full flex-col px-7 py-8 sm:px-9 sm:py-9">
       <h3 className="font-heading text-xl font-bold text-white md:text-2xl">Pyydä tarjous</h3>
-      <p className="mt-1.5 text-[14px] text-white/80">Kolme lyhyttä vaihetta, ei sitoumuksia.</p>
+      <p className="mt-1.5 text-[14px] text-white">Kolme lyhyttä vaihetta, ei sitoumuksia.</p>
 
       <div className="mt-6">
         <StepIndicator currentStep={step} />
@@ -294,7 +294,7 @@ export default function QuoteForm() {
         {step === 2 && (
           <div className="flex flex-col gap-3">
             <label className="flex flex-col gap-1.5">
-              <span className="text-[13px] font-semibold text-white/85">Nimi *</span>
+              <span className="text-[13px] font-semibold text-white">Nimi *</span>
               <input
                 type="text"
                 value={name}
@@ -306,7 +306,7 @@ export default function QuoteForm() {
             </label>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <label className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-semibold text-white/85">Puhelin</span>
+                <span className="text-[13px] font-semibold text-white">Puhelin</span>
                 <input
                   type="tel"
                   value={phone}
@@ -316,7 +316,7 @@ export default function QuoteForm() {
                 />
               </label>
               <label className="flex flex-col gap-1.5">
-                <span className="text-[13px] font-semibold text-white/85">Sähköposti</span>
+                <span className="text-[13px] font-semibold text-white">Sähköposti</span>
                 <input
                   type="email"
                   value={email}
@@ -327,7 +327,7 @@ export default function QuoteForm() {
               </label>
             </div>
             <label className="flex flex-col gap-1.5">
-              <span className="text-[13px] font-semibold text-white/85">Viesti (valinnainen)</span>
+              <span className="text-[13px] font-semibold text-white">Viesti (valinnainen)</span>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -336,7 +336,7 @@ export default function QuoteForm() {
                 className={`${inputClass} resize-none`}
               />
             </label>
-            <p className="text-[12.5px] text-white/65">
+            <p className="text-[12.5px] text-white/90">
               Anna joko puhelinnumero tai sähköposti, jotta voimme olla sinuun yhteydessä.
             </p>
           </div>

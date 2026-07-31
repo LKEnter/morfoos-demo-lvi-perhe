@@ -196,7 +196,7 @@ export default function Reviews() {
         </div>
 
         {pageCount > 1 && (
-          <div className="mt-6 flex justify-center gap-2">
+          <div className="mt-6 flex justify-center gap-1">
             {Array.from({ length: pageCount }).map((_, i) => (
               <button
                 key={i}
@@ -204,10 +204,16 @@ export default function Reviews() {
                 onClick={() => scrollToPage(i)}
                 aria-label={`Näytä sivu ${i + 1}`}
                 aria-current={i === activeIndex}
-                className={`h-2 rounded-full transition-all duration-300 ease-out ${
-                  i === activeIndex ? "w-6 bg-[var(--color-accent)]" : "w-2 bg-[var(--color-border)]"
-                }`}
-              />
+                className="flex h-11 w-11 items-center justify-center rounded-full"
+              >
+                <span
+                  className={`block rounded-full transition-all duration-300 ease-out ${
+                    i === activeIndex
+                      ? "h-2 w-6 bg-[var(--color-accent)]"
+                      : "h-2 w-2 bg-[var(--color-border)]"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         )}
