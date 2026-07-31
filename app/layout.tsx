@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import { Montserrat, Open_Sans } from "next/font/google";
+import { MorfoosGlobalProvider } from "@morfoos/core/providers";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MobileStickyCta from "./components/MobileStickyCta";
+import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin", "latin-ext"],
+  weight: ["600", "700", "800"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-open-sans",
+  display: "swap",
+});
+
+// Fallback baseline metadata metrics
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fi" className={`${montserrat.variable} ${openSans.variable}`}>
+      <body>
+        {/* Automatically activates case-insensitive link delegation and form monitoring */}
+        <MorfoosGlobalProvider
+          siteId={process.env.NEXT_PUBLIC_SITE_ID || "development_fallback"}
+          autoTrackClicks={true}
+        >
+          <a
+            href="#sisalto"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-[var(--color-dark)] focus:px-5 focus:py-2.5 focus:text-sm focus:font-medium focus:text-white"
+          >
+            Siirry sisältöön
+          </a>
+          <Header />
+          {children}
+          <Footer />
+          <MobileStickyCta />
+        </MorfoosGlobalProvider>
+      </body>
+    </html>
+  );
+}
